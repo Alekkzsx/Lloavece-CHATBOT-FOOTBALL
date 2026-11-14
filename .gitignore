@@ -1,0 +1,14 @@
+# Compilados
+bin/
+*.class
+
+# Histórico de conversas (gerado em tempo de execução)
+historico/
+
+# Conhecimento aprendido em tempo de execução
+dados/aprendidas.txt
+
+# IDEs
+.idea/
+.vscode/
+*.iml

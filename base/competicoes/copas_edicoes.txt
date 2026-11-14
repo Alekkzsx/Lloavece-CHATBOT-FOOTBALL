@@ -1,0 +1,24 @@
+# Todas as edições da Copa do Mundo (ano, sede e campeão)
+copa 1930 uruguai | Copa de 1930: sede Uruguai. Campeão: Uruguai (4 a 2 na Argentina). A primeira Copa da história, com 13 seleções.
+copa 1934 italia | Copa de 1934: sede Itália. Campeão: Itália (2 a 1 na Tchecoslováquia, na prorrogação).
+copa 1938 franca | Copa de 1938: sede França. Campeão: Itália (4 a 2 na Hungria), o bicampeonato italiano.
+copa 1950 brasil maracanaco | Copa de 1950: sede Brasil. Campeão: Uruguai, no "Maracanaço" (2 a 1 sobre o Brasil, que só precisava empatar).
+copa 1954 suica | Copa de 1954: sede Suíça. Campeão: Alemanha Ocidental (3 a 2 na Hungria), o "Milagre de Berna".
+copa 1958 suecia brasil | Copa de 1958: sede Suécia. Campeão: Brasil (5 a 2 na Suécia). Estreia mundial de Pelé, aos 17 anos, e de Garrincha.
+copa 1962 chile brasil | Copa de 1962: sede Chile. Campeão: Brasil (3 a 1 na Tchecoslováquia). Com Pelé lesionado, Garrincha liderou o bicampeonato.
+copa 1966 inglaterra | Copa de 1966: sede Inglaterra. Campeão: Inglaterra (4 a 2 na Alemanha, na prorrogação), com o polêmico gol de Geoff Hurst.
+copa 1970 mexico brasil tri | Copa de 1970: sede México. Campeão: Brasil (4 a 1 na Itália). O tri e a conquista definitiva da Taça Jules Rimet.
+copa 1974 alemanha | Copa de 1974: sede Alemanha Ocidental. Campeão: Alemanha Ocidental (2 a 1 na Holanda de Cruyff).
+copa 1978 argentina | Copa de 1978: sede Argentina. Campeão: Argentina (3 a 1 na Holanda, na prorrogação), primeiro título argentino.
+copa 1982 espanha italia | Copa de 1982: sede Espanha. Campeão: Itália (3 a 1 na Alemanha). O Brasil de Zico caiu para a Itália no "Sarriazo".
+copa 1986 mexico argentina maradona | Copa de 1986: sede México. Campeão: Argentina (3 a 2 na Alemanha). A Copa de Maradona, com a "Mão de Deus" e o "Gol do Século".
+copa 1990 italia alemanha | Copa de 1990: sede Itália. Campeão: Alemanha Ocidental (1 a 0 na Argentina, pênalti de Brehme).
+copa 1994 eua brasil tetra | Copa de 1994: sede Estados Unidos. Campeão: Brasil, nos pênaltis sobre a Itália (0 a 0 no tempo normal). O tetra após 24 anos.
+copa 1998 franca zidane | Copa de 1998: sede França. Campeão: França (3 a 0 no Brasil), com 2 gols de cabeça de Zidane.
+copa 2002 coreia japao brasil penta | Copa de 2002: sede Coreia do Sul e Japão. Campeão: Brasil (2 a 0 na Alemanha), o penta, com Ronaldo artilheiro (8 gols).
+copa 2006 alemanha italia | Copa de 2006: sede Alemanha. Campeão: Itália, nos pênaltis sobre a França (1 a 1), na final da cabeçada de Zidane em Materazzi.
+copa 2010 africa sul espanha | Copa de 2010: sede África do Sul. Campeão: Espanha (1 a 0 na Holanda, gol de Iniesta na prorrogação). Primeira Copa na África.
+copa 2014 brasil alemanha mineiraco | Copa de 2014: sede Brasil. Campeão: Alemanha (1 a 0 na Argentina, gol de Götze). O Brasil sofreu o 7 a 1 na semifinal.
+copa 2018 russia franca | Copa de 2018: sede Rússia. Campeão: França (4 a 2 na Croácia), com Mbappé brilhando aos 19 anos.
+copa 2022 catar argentina messi | Copa de 2022: sede Catar. Campeão: Argentina, nos pênaltis sobre a França (3 a 3), com Messi campeão e Mbappé fazendo hat-trick na final.
+copa 2026 eua mexico canada | Copa de 2026: sede Estados Unidos, México e Canadá. Primeira com 48 seleções e 104 jogos. (Acrescentar o campeão após o torneio.)

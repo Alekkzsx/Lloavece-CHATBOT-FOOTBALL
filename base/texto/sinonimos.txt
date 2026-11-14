@@ -1,0 +1,74 @@
+# Sinônimos / apelidos — expansão de tokens na carga da base.
+# Formato: apelido | termo_canonico
+# O carregador normaliza ambos os lados com o ProcessadorTexto.
+# Quando o token do usuário casa com o apelido, ele também é
+# associado ao termo canônico (aumenta a pontuação da regra).
+rei | pele
+fenomeno | ronaldo
+bruxo | ronaldinho
+galinho | zico
+baixinho | romario
+anjo de pernas tortas | garrincha
+peixe | santos
+mengao | flamengo
+mengo | flamengo
+rubro negro | flamengo
+verdao | palmeiras
+alviverde | palmeiras
+timao | corinthians
+coringao | corinthians
+tricolor paulista | sao paulo
+raposa | cruzeiro
+galo | atletico mineiro
+imortal | gremio
+colorado | internacional
+gigante da colina | vasco
+glorioso | botafogo
+estrela solitaria | botafogo
+laranjeiras | fluminense
+merengue | real madrid
+blaugrana | barcelona
+barca | barcelona
+bavaros | bayern
+reds | liverpool
+red devils | manchester united
+citizens | manchester city
+blues | chelsea
+gunners | arsenal
+vecchia signora | juventus
+juve | juventus
+rossoneri | milan
+nerazzurri | inter
+parisiens | psg
+canarinho | selecao brasileira
+selecao | selecao brasileira
+albiceleste | argentina
+azzurra | italia
+furia roja | espanha
+three lions | inglaterra
+laranja mecanica | holanda
+xeneize | boca juniors
+millonario | river plate
+cr7 | cristiano ronaldo
+cristiano | cristiano ronaldo
+messi | lionel messi
+neymar | neymar jr
+mbappe | kylian mbappe
+vini jr | vinicius junior
+vini | vinicius junior
+liberta | libertadores
+champions | champions league
+liga dos campeoes | champions league
+brasileirao | campeonato brasileiro
+copa america | copa america
+mundial | mundial de clubes
+offside | impedimento
+penalty | penalti
+penalti | penalti
+tecnico | treinador
+treinador | tecnico
+goleiro | guarda redes
+bola de ouro | ballon d or
+sete a um | mineiraco
+7x1 | mineiraco
+sete um | mineiraco

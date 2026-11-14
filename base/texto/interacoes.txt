@@ -1,0 +1,10 @@
+# Interações sociais do chatbot (formato padrão: chaves | resposta)
+ola oi eai bom dia boa tarde boa noite | Olá! Eu sou um chatbot de futebol. Pergunte sobre jogadores, clubes, regras, Copas, história ou termos do futebol.
+quem e voce o que voce faz | Sou um chatbot tradicional de futebol, feito em Java com regras e palavras-chave (sem IA). Respondo dúvidas sobre o mundo do futebol.
+ajuda help comandos | Posso falar de jogadores (Pelé, Messi, Marta...), clubes, seleções, regras (impedimento, VAR...), Copas do Mundo, história, estádios e termos. É só perguntar!
+obrigado obrigada valeu vlw | De nada! Se quiser saber mais sobre futebol, é só perguntar.
+tchau ate mais adeus fui | Até a próxima! Foi bom falar de futebol com você.
+voce e bom gostei legal | Obrigado! Fico feliz em ajudar. Quer saber mais alguma coisa sobre futebol?
+voce e ruim burro nao sabe | Vou me esforçar para melhorar! Tente reformular a pergunta com palavras-chave como "impedimento", "Copa 2002" ou "Pelé".
+qual seu time favorito | Como sou um chatbot, não torço para nenhum time — mas posso falar de todos! Qual é o seu?
+me conta uma curiosidade | Curiosidade: Pelé é o único jogador tricampeão mundial (1958, 1962, 1970). Quer outra? Pergunte sobre "recordes" ou "história".

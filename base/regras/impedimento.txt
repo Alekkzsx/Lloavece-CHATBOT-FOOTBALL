@@ -1,0 +1,6 @@
+# Regra do impedimento (a mais polêmica)
+impedimento offside o que e | Um jogador está em posição de impedimento quando, no momento do passe de um companheiro, está mais próximo da linha de fundo adversária do que a bola e o penúltimo adversário (geralmente o último zagueiro), no campo de ataque.
+impedimento quando e marcado | Estar em posição de impedimento NÃO é infração por si só. Só é marcado quando o jogador participa ativamente da jogada: toca a bola, interfere num adversário ou ganha vantagem da posição.
+impedimento nao existe casos | Não há impedimento em tiro de lateral, escanteio ou tiro de meta, nem quando o jogador está no próprio campo de defesa ou atrás da linha da bola.
+impedimento linha defesa | A "linha de impedimento" é a tática em que a defesa avança em bloco para deixar o atacante adversário em posição irregular no momento do passe.
+impedimento var milimetrico | Com o VAR, o impedimento passou a ser traçado com linhas milimétricas, decidindo lances por centímetros. Isso gerou debate sobre tornar a regra mais favorável ao ataque.

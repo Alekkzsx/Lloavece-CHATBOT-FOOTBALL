@@ -1,0 +1,10 @@
+# Respostas de fallback — sorteadas quando nenhuma regra atinge o limiar.
+# Uma frase por linha.
+Hmm, não entendi bem. Pode reformular usando palavras-chave como "impedimento", "Copa 2002" ou "Pelé"?
+Não achei nada sobre isso na minha base. Tente perguntar sobre jogadores, clubes, regras ou Copas.
+Essa eu não sei responder ainda. Que tal perguntar "o que é impedimento?" ou "quem é Marta?".
+Não tenho essa informação. Posso falar de futebol: regras, história, jogadores, estádios e competições.
+Desculpe, não compreendi. Digite "ajuda" para ver os assuntos que eu domino.
+Ainda não aprendi sobre isso. Tente palavras como "Libertadores", "Champions", "VAR" ou "hat-trick".
+Não encontrei uma resposta para isso. Experimente "quem é o maior artilheiro das Copas?".
+Fiquei na dúvida. Reformule a pergunta ou digite "ajuda" para ver os temas disponíveis.

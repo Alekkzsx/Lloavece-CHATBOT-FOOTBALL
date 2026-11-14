@@ -1,0 +1,50 @@
+# ============================================================
+# BASE DE CONHECIMENTO — CHATBOT DE FUTEBOL (tema: futebol)
+# ============================================================
+# Todos os arquivos são texto puro, codificação UTF-8.
+# Linhas em branco são ignoradas. Linhas iniciadas por # são comentários.
+#
+# FORMATO PADRÃO (conhecimento): uma entrada por linha
+#     palavras-chave | resposta
+# - As palavras-chave são separadas por espaço e escritas em português
+#   natural (pode ter acento e plural): o carregador aplica o MESMO
+#   ProcessadorTexto usado na pergunta do usuário, então os dois lados
+#   chegam normalizados (minúsculas, sem acento, radicais, bigramas).
+# - A resposta é texto livre, em 1 ou 2 frases (estilo chatbot).
+# - Não use o caractere | dentro da resposta.
+#
+# FORMATOS ESPECIAIS (pasta texto/):
+#   stopwords.txt  -> 1 palavra por linha (removida do pipeline)
+#   sinonimos.txt  -> apelido | termo_canonico (expansão de tokens)
+#   interacoes.txt -> formato padrão (saudação, ajuda, despedida...).
+#                     ATENÇÃO: estas regras devem ser casadas sobre o
+#                     texto apenas NORMALIZADO (etapa 1), ANTES de remover
+#                     stopwords, pois usam palavras funcionais (oi, quem,
+#                     você...) que o pipeline descartaria.
+#   fallback.txt   -> 1 frase por linha (resposta sorteada quando
+#                     nenhuma regra atinge o limiar de pontuação)
+#
+# MAPA DAS SUBPASTAS:
+#   jogadores/   -> lendas brasileiras, mundiais, geração atual,
+#                   futebol feminino e técnicos
+#   regras/      -> as 17 regras do jogo (IFAB), impedimento, faltas,
+#                   pênaltis, VAR e mudanças recentes
+#   clubes/      -> brasileiros, europeus e sul-americanos
+#   selecoes/    -> Seleção Brasileira (arquivo próprio) e outras
+#   competicoes/ -> Copa do Mundo (inclui todas as edições), Libertadores,
+#                   Champions, Brasileirão, Copa do Brasil e outras
+#   historia/    -> origem do futebol, história no Brasil, marcos
+#                   mundiais, história do futebol feminino, recordes
+#   termos/      -> glossário, dribles/jogadas e táticas
+#   posicoes/    -> posições, numeração e esquemas táticos
+#   estadios/    -> estádios famosos
+#   premiacoes/  -> Bola de Ouro, The Best, Puskás, chuteiras...
+#   texto/       -> dados do pipeline (stopwords, sinônimos) e
+#                   interação social (saudações, fallback)
+#
+# OBSERVAÇÕES DE CONTEÚDO:
+# - Dados históricos consolidados até a temporada 2025.
+# - A Copa do Mundo 2026 (EUA/México/Canadá) está descrita como edição
+#   (sede, formato); o campeão deve ser acrescentado após o torneio.
+# - Evitei afirmar situação "atual" de elenco/classificação, que muda
+#   toda semana; preferi fatos históricos verificáveis.

@@ -1,0 +1,6 @@
+# Pênalti e disputa por pênaltis
+penalti o que e | O pênalti é marcado quando um time comete uma falta de tiro livre direto dentro da própria área. A bola é colocada na marca a 11 m do gol, com só o goleiro defendendo.
+penalti cobranca goleiro | Na cobrança, o goleiro deve ter ao menos um pé sobre a linha até o chute. Os demais jogadores ficam fora da área e do semicírculo até a bola ser tocada.
+disputa penaltis mata mata | Em mata-mata empatado após prorrogação, há disputa de pênaltis: 5 cobranças alternadas para cada lado. Se persistir o empate, segue em cobranças avulsas (morte súbita).
+penalti rebote | Se o pênalti bate na trave ou no goleiro e volta, o cobrador não pode tocar de novo antes de outro jogador; mas companheiros podem aproveitar o rebote (exceto na disputa final).
+panenka cavadinha | A "cavadinha" ou "Panenka" é o pênalti cobrado com um toque suave no meio do gol, apostando que o goleiro vai se atirar para um lado. Leva o nome de Antonín Panenka, que a usou na final da Euro 1976.

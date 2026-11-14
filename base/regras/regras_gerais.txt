@@ -1,0 +1,15 @@
+# As 17 regras do jogo (IFAB) — visão geral e regras básicas
+regras futebol quantas leis | O futebol tem 17 regras (Leis do Jogo), definidas pelo IFAB (International Football Association Board). Cobrem campo, bola, jogadores, equipamento, árbitro, auxiliares, duração, início, bola em jogo, gol, impedimento, faltas, tiros livres, pênalti, lateral, tiro de meta e escanteio.
+campo dimensoes medidas | O campo oficial tem de 90 a 120 m de comprimento por 45 a 90 m de largura. Em jogos internacionais, 100-110 m por 64-75 m. As linhas fazem parte das áreas que delimitam.
+gol trave dimensoes | A meta (gol) tem 7,32 m de largura por 2,44 m de altura. É gol quando a bola ultrapassa COMPLETAMENTE a linha entre as traves e abaixo do travessão.
+bola peso circunferencia | A bola oficial (tamanho 5) tem circunferência de 68 a 70 cm e peso de 410 a 450 g no início da partida.
+jogadores quantidade minimo | Cada time joga com 11 jogadores, sendo um goleiro. Uma partida não começa nem continua se um time tiver menos de 7 jogadores.
+duracao tempo partida | A partida tem dois tempos de 45 minutos, com intervalo de até 15 minutos. O árbitro acrescenta o tempo perdido (acréscimos). Em mata-mata pode haver prorrogação de 2 tempos de 15 min.
+substituicao quantas trocas | A regra atual permite 5 substituições por time em até 3 paradas (mais o intervalo). O jogador substituído não pode voltar, exceto em categorias de base e amadoras.
+equipamento obrigatorio | O equipamento obrigatório é camisa, calção, meiões, caneleiras e chuteiras. O goleiro usa cor diferente dos demais e do árbitro.
+arbitro autoridade | O árbitro é a autoridade máxima em campo: aplica as leis, marca o tempo, dá cartões e pode usar a vantagem (deixar o jogo seguir quando parar prejudicaria quem sofreu a falta).
+auxiliares bandeirinhas | Dois árbitros assistentes (bandeirinhas) sinalizam impedimento, laterais, escanteios e tiros de meta. Há ainda o quarto árbitro e, em competições grandes, o VAR.
+bola dentro fora linha | A bola só está fora quando ultrapassa INTEIRAMENTE a linha, seja pelo chão ou pelo ar. Se qualquer parte toca a linha, o jogo segue.
+lateral cobranca | O lateral é cobrado com as duas mãos, por cima da cabeça, com os dois pés no chão (ou na linha). Não vale gol direto de lateral.
+escanteio corner | O escanteio é cobrado do canto quando a defesa é a última a tocar na bola antes de ela sair pela linha de fundo. Vale gol direto (o chamado "gol olímpico").
+tiro de meta | O tiro de meta é cobrado pelo goleiro quando o ataque é o último a tocar na bola antes de sair pela linha de fundo. Desde 2019 a bola não precisa sair da área para estar em jogo.

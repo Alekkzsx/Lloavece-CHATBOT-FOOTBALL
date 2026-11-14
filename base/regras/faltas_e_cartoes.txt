@@ -1,0 +1,9 @@
+# Faltas, cartões e conduta
+falta o que e | Falta é uma infração de contato (chutar, empurrar, segurar, dar rasteira) ou de mão na bola. Pode ser tiro livre direto ou indireto, dependendo da gravidade e do tipo.
+cartao amarelo advertencia | O cartão amarelo é uma advertência: por conduta antidesportiva, reclamação, falta tática, retardar o reinício ou entrar/sair sem autorização. Dois amarelos viram vermelho.
+cartao vermelho expulsao | O cartão vermelho expulsa o jogador: por jogo brusco grave, conduta violenta, cuspir, impedir chance clara de gol com falta/mão (DOGSO) ou segundo amarelo. O time fica com um a menos.
+dogso chance clara gol | DOGSO é "impedir uma chance clara de gol". Se for com falta dentro da área e houver disputa de bola, a regra atual dá pênalti e amarelo (não vermelho), para evitar a "tripla punição".
+mao na bola handball | Mão na bola é infração quando o jogador toca a bola deliberadamente com a mão/braço, ou quando o braço aumenta o volume do corpo de forma antinatural. Nem todo toque é falta.
+tiro livre direto indireto | O tiro livre direto pode ir direto ao gol. O indireto precisa de um segundo toque antes de entrar. A barreira deve ficar a 9,15 m da bola.
+vantagem lei | A lei da vantagem permite ao árbitro deixar o jogo seguir após uma falta quando parar prejudicaria a equipe que a sofreu; ele pode aplicar o cartão depois.
+conduta violenta simulacao | Simular uma falta (cavar) para enganar o árbitro é conduta antidesportiva, punível com cartão amarelo.

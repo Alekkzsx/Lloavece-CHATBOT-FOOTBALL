@@ -1,0 +1,16 @@
+# Táticas e estilos de jogo
+tiki taka | Tiki-taka é o estilo de posse de bola com passes curtos e movimentação constante, popularizado pelo Barcelona de Guardiola e pela Espanha (2008-2012).
+gegenpressing pressao | Gegenpressing é a pressão imediata após perder a bola, para recuperá-la ainda no campo adversário. Jürgen Klopp é o grande expoente.
+catenaccio retranca italia | Catenaccio é o estilo defensivo italiano, com um líbero atrás da zaga e foco em não sofrer gols, depois sair em contra-ataques. Helenio Herrera o notabilizou na Inter nos anos 1960.
+futebol total holanda | Futebol Total é o sistema holandês de Cruyff e Michels (anos 1970), em que qualquer jogador pode assumir qualquer posição, com troca constante de funções.
+estacionar onibus retranca | "Estacionar o ônibus" é a expressão (de Mourinho) para um time que se fecha todo na defesa, priorizando não sofrer gols. É a retranca extrema.
+contra ataque | Contra-ataque é a jogada rápida de transição: recuperar a bola e atacar em velocidade antes que o adversário se reorganize. Letal contra times que atacam muito.
+pressao alta | Pressão alta é marcar os adversários ainda no campo deles, forçando erros na saída de bola. Exige condicionamento e coordenação do time inteiro.
+falso nove | Falso 9 é o centroavante que recua para o meio, saindo da referência fixa e confundindo os zagueiros. Messi brilhou na função no Barcelona; Totti na Roma.
+libero | Líbero é o defensor "livre" que fica atrás da linha de zaga, sem marcar ninguém fixo, cobrindo os espaços. Beckenbauer elevou a função, atacando desde trás.
+regista | Regista é o meia recuado que organiza o jogo a partir de trás, ditando o ritmo com passes longos. Pirlo é o exemplo clássico.
+box to box | Box-to-box é o volante/meia que atua de uma área à outra, defendendo e atacando com a mesma intensidade. Gerrard e Yaya Touré são exemplos.
+trequartista | Trequartista é o meia ofensivo que atua entre o meio e o ataque, criando jogadas. Zico e Kaká são exemplos brasileiros do "camisa 10" clássico.
+linha de impedimento | A linha de impedimento é a tática defensiva de avançar em bloco para deixar atacantes adversários em posição irregular no momento do passe.
+goleiro libero | Goleiro-líbero é o goleiro que sai da área para cortar jogadas e participa da saída de bola, como um defensor extra. Neuer popularizou o estilo.
+laterais invertidos | Laterais invertidos são os que, com a posse, vêm para o meio em vez de ficar na linha lateral, ajudando a controlar o jogo. Recurso muito usado por Guardiola.

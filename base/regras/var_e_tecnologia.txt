@@ -1,0 +1,7 @@
+# VAR e tecnologia no futebol
+var o que e significa | VAR significa Video Assistant Referee (árbitro assistente de vídeo). Uma equipe de vídeo revisa lances em tempo real e avisa o árbitro de campo em casos de erro claro e óbvio.
+var quando e usado | O VAR só atua em 4 tipos de lance: gols, pênaltis, cartões vermelhos diretos e confusão de identidade (punir o jogador errado). Não revisa toda falta.
+var como funciona revisao | O árbitro pode aceitar a informação do VAR ou ir ao monitor à beira do campo (revisão em campo, OFR) para rever o lance ele mesmo antes de decidir.
+linha impedimento semi automatica | A partir da Copa de 2022, o impedimento semiautomático usa câmeras e um chip na bola para traçar as linhas em segundos, agilizando a decisão.
+tecnologia linha gol | A tecnologia da linha do gol (GLT) avisa o relógio do árbitro em menos de 1 segundo quando a bola cruza totalmente a linha. Estreou na Copa de 2014.
+var polemica | O VAR é elogiado por corrigir erros graves, mas criticado por demora, por linhas milimétricas de impedimento e por interpretações que variam de liga para liga.

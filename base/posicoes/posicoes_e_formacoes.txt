@@ -1,0 +1,14 @@
+# Posições, numeração e esquemas táticos
+goleiro posicao | Goleiro (camisa 1): único que pode usar as mãos, dentro da própria área. Defende o gol e organiza a defesa. Exemplos: Yashin, Buffon, Neuer.
+zagueiro central defesa | Zagueiro (camisas 3 e 4): defensor central, responsável por marcar os atacantes e cortar jogadas. Exemplos: Maldini, Sergio Ramos.
+lateral direito esquerdo | Laterais (camisas 2 e 6): defensores que atuam pelas beiradas do campo, marcando os pontas e apoiando o ataque. Exemplos: Cafu, Roberto Carlos, Nilton Santos.
+volante marcacao | Volante (camisa 5): meio-campista de marcação, protege a defesa e inicia a saída de bola. Exemplos: Falcão, Casemiro.
+meia armador camisa 10 | Meia armador (camisa 10): o criador, organiza o ataque com passes e visão de jogo. A camisa 10 é mítica por Pelé, Zico, Maradona e Messi.
+ponta winger | Ponta (camisas 7 e 11): atacante que joga aberto pelas beiradas, driblando e cruzando. Exemplos: Garrincha, Cristiano Ronaldo, Vinícius Júnior.
+centroavante camisa 9 | Centroavante (camisa 9): o finalizador, referência do ataque dentro da área. Exemplos: Ronaldo, Romário, Haaland.
+camisa 10 mistica | A camisa 10 virou símbolo do craque por acaso: Pelé a recebeu na Copa de 1958 e a transformou em lenda. Desde então, é a camisa do melhor jogador.
+formacao 442 | O 4-4-2 é o esquema clássico: 4 defensores, 4 meias e 2 atacantes. Equilibrado, foi a base do futebol inglês por décadas.
+formacao 433 | O 4-3-3 usa 4 defensores, 3 meias e 3 atacantes (um centroavante e dois pontas). Favorece a pressão e a posse; muito usado por Guardiola e no futebol moderno.
+formacao 4231 | O 4-2-3-1 tem 2 volantes, 3 meias ofensivos e 1 centroavante. É um dos esquemas mais usados no futebol atual, equilibrando defesa e ataque.
+formacao 352 tres zagueiros | O 3-5-2 usa 3 zagueiros e alas que fazem a função de laterais, com 3 meias e 2 atacantes. Dá solidez central e amplitude pelas alas.
+formacao historia wm | Historicamente, o futebol usou o 2-3-5 (pirâmide), depois o WM (anos 1930) e o 4-2-4 (Brasil de 1958), evoluindo até os esquemas atuais.

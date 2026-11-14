@@ -1,0 +1,15 @@
+# Clubes europeus
+real madrid merengue | Real Madrid: maior campeão da Champions League (15 títulos) e da Espanha. Estádio Santiago Bernabéu. Era dos "Galácticos" e das remontadas épicas. Ídolos: Di Stéfano, Zidane, Cristiano Ronaldo.
+barcelona barca blaugrana | Barcelona: clube catalão, "més que un club". Estádio Camp Nou. Berço de Cruyff, Guardiola, Messi e do tiki-taka. 5 Champions, com o sextete histórico de 2009.
+manchester united red devils | Manchester United: gigante inglês de Old Trafford, o "Teatro dos Sonhos". 20 títulos ingleses e 3 Champions. Era Sir Alex Ferguson e a Classe de 92 (Beckham, Giggs, Scholes).
+manchester city citizens | Manchester City: potência recente sob Guardiola, 4 Premier Leagues seguidas (2021-2024) e a tríplice coroa de 2023. Ídolos atuais: Haaland e De Bruyne.
+liverpool reds anfield | Liverpool: clube de Anfield, hino "You'll Never Walk Alone". 6 Champions. Protagonizou o "Milagre de Istambul" (2005), virando 3 a 0 sobre o Milan e vencendo nos pênaltis.
+chelsea blues | Chelsea: clube de Stamford Bridge, campeão da Champions em 2012 e 2021. Mourinho o levou ao bicampeonato inglês nos anos 2000.
+arsenal gunners | Arsenal: clube de Londres, famoso pelos "Invincibles" de 2003-04, campeões ingleses invictos. Era Arsène Wenger e Thierry Henry, maior artilheiro do clube.
+bayern munique baviera | Bayern de Munique: maior campeão alemão, 6 Champions. Lema "Mia san mia". Ídolos: Beckenbauer, Gerd Müller, Neuer. Venceu o sextete em 2020.
+juventus juve vecchia signora | Juventus: a "Velha Senhora" de Turim, maior campeã italiana. Ídolos: Del Piero, Buffon, Platini. Cristiano Ronaldo jogou lá de 2018 a 2021.
+milan rossonero | Milan: clube de San Siro, 7 Champions (2º maior vencedor). Era dos holandeses (Van Basten, Gullit, Rijkaard) e da dinastia Maldini.
+inter milan nerazzurri | Inter de Milão: campeã da tríplice coroa de 2010 com Mourinho (Serie A, Copa e Champions). Ídolos: Zanetti e Ronaldo Fenômeno.
+psg paris saint germain | Paris Saint-Germain: clube francês, dominou a Ligue 1 com Neymar, Messi e Mbappé. Conquistou sua primeira Champions em 2025, com Dembélé como destaque.
+borussia dortmund | Borussia Dortmund: clube alemão do "Muro Amarelo", a maior torcida em pé da Europa. Campeão da Champions em 1997 e finalista em 2013 e 2024.
+benfica | Benfica: clube de Lisboa, bicampeão europeu em 1961 e 1962 com Eusébio. Alvo da "maldição de Béla Guttmann" nas finais europeias seguintes.
