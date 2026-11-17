@@ -11,7 +11,7 @@ import java.util.Set;
  * qualquer sequência de caracteres que não seja letra ou dígito
  * é tratada como delimitador (espaços, vírgulas, pontos, etc.).
  *
- * Exemplo: "Troca de óleo, urgente!" -> [troca, de, oleo, urgente]
+ * Exemplo: "Quem marcou o gol da final?" -> [quem, marcou, o, gol, da, final]
  */
 public class TokenizadorSimples extends ProcessadorTexto {
 

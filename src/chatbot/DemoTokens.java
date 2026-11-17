@@ -16,7 +16,7 @@ import chatbot.texto.TokenizadorSimples;
  *
  * Uso:
  *   java -cp bin chatbot.DemoTokens                          (interativo)
- *   java -cp bin chatbot.DemoTokens "Quando trocar o óleo?"  (direto)
+ *   java -cp bin chatbot.DemoTokens "Quem é o maior artilheiro das Copas?" (direto)
  */
 public class DemoTokens {
 
@@ -32,7 +32,7 @@ public class DemoTokens {
             return;
         }
 
-        System.out.println("Demo da classe base de TOKENs — digite uma frase (ou 'sair'):");
+        System.out.println("Demo de tokens para perguntas sobre futebol — digite uma frase (ou 'sair'):");
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("> ");

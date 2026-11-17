@@ -27,7 +27,7 @@ import java.util.Set;
  */
 public abstract class ProcessadorTexto {
 
-    /** Lista padrão de stopwords (caso o arquivo dados/stopwords.txt não exista). */
+    /** Lista padrão de stopwords, usada quando nenhuma lista personalizada é fornecida. */
     public static final Set<String> STOPWORDS_PADRAO = Collections.unmodifiableSet(
             new HashSet<>(Arrays.asList(
                     "a", "o", "as", "os", "um", "uma", "uns", "umas",
@@ -130,7 +130,7 @@ public abstract class ProcessadorTexto {
 
     /**
      * Heurística simples de lematização para PT-BR (plural -> singular):
-     *   "manutencoes" -> "manutencao" | "paes" -> "pao" | "pneus" -> "pneu".
+     *   "competicoes" -> "competicao" | "jogadores" -> "jogador".
      * Palavras com menos de 4 letras não são alteradas.
      */
     public String reduzirRadical(String palavra) {
@@ -152,7 +152,7 @@ public abstract class ProcessadorTexto {
     /**
      * Canonicaliza uma palavra-chave da base de conhecimento com o MESMO
      * tratamento aplicado ao texto do usuário (normalização + radical).
-     * Palavras-chave compostas usam "_" (ex.: "troca_oleo").
+     * Palavras-chave compostas usam "_" (ex.: "copa_do_mundo").
      */
     public String canonicalizarPalavraChave(String palavraChave) {
         String normalizada = normalizar(palavraChave);

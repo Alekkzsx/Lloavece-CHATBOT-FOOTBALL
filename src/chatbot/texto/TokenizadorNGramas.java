@@ -12,12 +12,12 @@ import java.util.Set;
  * unidas por "_") através do gancho enriquecer(), executado APÓS a
  * remoção de stopwords e a redução de radicais.
  *
- * Exemplo: "Quando trocar o óleo do motor?"
- *   unigramas úteis: [trocar, oleo, motor]
- *   bigramas:        [trocar_oleo, oleo_motor]
+ * Exemplo: "Quem é o maior artilheiro das Copas?"
+ *   unigramas úteis: [quem, maior, artilheiro, copa]
+ *   bigramas:        [quem_maior, maior_artilheiro, artilheiro_copa]
  *
  * Isso permite que a base de conhecimento use palavras-chave compostas
- * como "troca_oleo" e "carro_liga", capturando expressões de duas palavras.
+ * como "copa_mundo" e "maior_artilheiro", capturando expressões de duas palavras.
  */
 public class TokenizadorNGramas extends TokenizadorSimples {
 
