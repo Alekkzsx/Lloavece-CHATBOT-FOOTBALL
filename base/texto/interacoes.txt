@@ -1,4 +1,6 @@
-# Interações sociais do chatbot (formato padrão: chaves | resposta)
+# Exemplos de saudações, pedidos de ajuda e despedidas para o assistente.
+# Formato de cada linha: palavras que identificam a interação | resposta.
+# Este arquivo é apenas conteúdo; a demonstração Java atual ainda não o lê.
 ola oi eai bom dia boa tarde boa noite | Olá! Eu sou um chatbot de futebol. Pergunte sobre jogadores, clubes, regras, Copas, história ou termos do futebol.
 quem e voce o que voce faz | Sou um chatbot tradicional de futebol, feito em Java com regras e palavras-chave (sem IA). Respondo dúvidas sobre o mundo do futebol.
 ajuda help comandos | Posso falar de jogadores (Pelé, Messi, Marta...), clubes, seleções, regras (impedimento, VAR...), Copas do Mundo, história, estádios e termos. É só perguntar!

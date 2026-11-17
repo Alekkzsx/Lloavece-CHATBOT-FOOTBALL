@@ -1,50 +1,43 @@
 # ============================================================
-# BASE DE CONHECIMENTO — CHATBOT DE FUTEBOL (tema: futebol)
+# ARQUIVOS DE CONHECIMENTO — ASSISTENTE DE FUTEBOL
 # ============================================================
-# Todos os arquivos são texto puro, codificação UTF-8.
-# Linhas em branco são ignoradas. Linhas iniciadas por # são comentários.
 #
-# FORMATO PADRÃO (conhecimento): uma entrada por linha
-#     palavras-chave | resposta
-# - As palavras-chave são separadas por espaço e escritas em português
-#   natural (pode ter acento e plural): o carregador aplica o MESMO
-#   ProcessadorTexto usado na pergunta do usuário, então os dois lados
-#   chegam normalizados (minúsculas, sem acento, radicais, bigramas).
-# - A resposta é texto livre, em 1 ou 2 frases (estilo chatbot).
-# - Não use o caractere | dentro da resposta.
+# Esta pasta guarda textos sobre futebol para uma futura integração com o
+# programa Java. A demonstração atual, em src/futebol/, ainda NÃO lê estes
+# arquivos nem usa seu conteúdo para responder perguntas.
 #
-# FORMATOS ESPECIAIS (pasta texto/):
-#   stopwords.txt  -> 1 palavra por linha (removida do pipeline)
-#   sinonimos.txt  -> apelido | termo_canonico (expansão de tokens)
-#   interacoes.txt -> formato padrão (saudação, ajuda, despedida...).
-#                     ATENÇÃO: estas regras devem ser casadas sobre o
-#                     texto apenas NORMALIZADO (etapa 1), ANTES de remover
-#                     stopwords, pois usam palavras funcionais (oi, quem,
-#                     você...) que o pipeline descartaria.
-#   fallback.txt   -> 1 frase por linha (resposta sorteada quando
-#                     nenhuma regra atinge o limiar de pontuação)
+# COMO LER OS ARQUIVOS:
+# - Os arquivos usam texto simples e codificação UTF-8.
+# - Nos arquivos de assuntos, cada linha normalmente contém:
+#       palavras-chave | resposta
+# - O sinal | separa as palavras-chave da resposta.
+# - Linhas vazias e linhas que começam com # são apenas espaços e comentários.
+# - O conteúdo é material de conhecimento; as regras para interpretá-lo ainda
+#   precisam ser programadas no assistente.
 #
-# MAPA DAS SUBPASTAS:
-#   jogadores/   -> lendas brasileiras, mundiais, geração atual,
-#                   futebol feminino e técnicos
-#   regras/      -> as 17 regras do jogo (IFAB), impedimento, faltas,
-#                   pênaltis, VAR e mudanças recentes
-#   clubes/      -> brasileiros, europeus e sul-americanos
-#   selecoes/    -> Seleção Brasileira (arquivo próprio) e outras
-#   competicoes/ -> Copa do Mundo (inclui todas as edições), Libertadores,
-#                   Champions, Brasileirão, Copa do Brasil e outras
-#   historia/    -> origem do futebol, história no Brasil, marcos
-#                   mundiais, história do futebol feminino, recordes
-#   termos/      -> glossário, dribles/jogadas e táticas
-#   posicoes/    -> posições, numeração e esquemas táticos
-#   estadios/    -> estádios famosos
-#   premiacoes/  -> Bola de Ouro, The Best, Puskás, chuteiras...
-#   texto/       -> dados do pipeline (stopwords, sinônimos) e
-#                   interação social (saudações, fallback)
+# ARQUIVOS DE TEXTO AUXILIAR:
+# - texto/stopwords.txt: palavras comuns que poderão ser ignoradas.
+# - texto/sinonimos.txt: apelidos que poderão apontar para um nome principal.
+# - texto/interacoes.txt: exemplos de saudações, ajuda e despedidas.
+# - texto/fallback.txt: respostas alternativas para perguntas sem resposta.
+#   A escolha aleatória e o uso destes arquivos ainda não estão implementados.
 #
-# OBSERVAÇÕES DE CONTEÚDO:
-# - Dados históricos consolidados até a temporada 2025.
-# - A Copa do Mundo 2026 (EUA/México/Canadá) está descrita como edição
-#   (sede, formato); o campeão deve ser acrescentado após o torneio.
-# - Evitei afirmar situação "atual" de elenco/classificação, que muda
-#   toda semana; preferi fatos históricos verificáveis.
+# ORGANIZAÇÃO DOS ASSUNTOS:
+# - clubes/: clubes brasileiros, europeus e sul-americanos.
+# - competicoes/: Copas, campeonatos e outras competições.
+# - estadios/: estádios conhecidos.
+# - historia/: origem, história, momentos importantes e recordes.
+# - jogadores/: atletas, lendas, geração atual e técnicos.
+# - premiacoes/: prêmios individuais do futebol.
+# - posicoes/: posições dos jogadores e formações.
+# - regras/: regras, impedimento, faltas, pênaltis, VAR e mudanças.
+# - selecoes/: Seleção Brasileira e outras seleções.
+# - termos/: glossário, jogadas e táticas.
+# - texto/: listas e mensagens auxiliares descritas acima.
+#
+# SOBRE O CONTEÚDO:
+# - Os dados históricos foram reunidos principalmente até a temporada de 2025.
+# - Algumas referências à Copa do Mundo de 2026 descrevem a edição antes de
+#   haver campeão registrado.
+# - Elencos e classificações mudam com frequência; por isso, o conteúdo evita
+#   tratar essas informações como se fossem sempre atuais.

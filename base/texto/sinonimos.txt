@@ -1,8 +1,7 @@
-# Sinônimos / apelidos — expansão de tokens na carga da base.
-# Formato: apelido | termo_canonico
-# O carregador normaliza ambos os lados com o ProcessadorTexto.
-# Quando o token do usuário casa com o apelido, ele também é
-# associado ao termo canônico (aumenta a pontuação da regra).
+# Apelidos e nomes equivalentes preparados para a base de futebol.
+# Formato de cada linha: apelido | nome principal.
+# Exemplo: rei | pele significa que "rei" poderá apontar para "pele".
+# A demonstração Java atual ainda não lê este arquivo nem expande sinônimos.
 rei | pele
 fenomeno | ronaldo
 bruxo | ronaldinho

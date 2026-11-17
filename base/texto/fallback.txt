@@ -1,5 +1,6 @@
-# Respostas de fallback — sorteadas quando nenhuma regra atinge o limiar.
-# Uma frase por linha.
+# Respostas alternativas para perguntas que o assistente não reconhecer.
+# Há uma frase por linha. A demonstração Java atual ainda não escolhe nem
+# exibe respostas deste arquivo.
 Hmm, não entendi bem. Pode reformular usando palavras-chave como "impedimento", "Copa 2002" ou "Pelé"?
 Não achei nada sobre isso na minha base. Tente perguntar sobre jogadores, clubes, regras ou Copas.
 Essa eu não sei responder ainda. Que tal perguntar "o que é impedimento?" ou "quem é Marta?".

@@ -1,7 +1,9 @@
-# Stopwords do português — removidas do pipeline de tokens.
-# Uma palavra por linha, em minúsculas e SEM acento (o pipeline normaliza).
-# Não inclui palavras de domínio (gol, copa, jogador...) nem saudações
-# (oi, ola, obrigado...), que são chaves de interacoes.txt.
+# Lista de palavras comuns preparada para uso futuro no assistente de futebol.
+# Uma palavra por linha, em minúsculas e sem acento.
+# A demonstração Java atual ainda não lê este arquivo: ela usa uma lista
+# definida dentro de ProcessadorTexto.java.
+# Foram deixadas de fora palavras importantes do futebol e saudações, pois
+# elas podem ser úteis em respostas e interações quando essa parte for criada.
 a
 o
 as
