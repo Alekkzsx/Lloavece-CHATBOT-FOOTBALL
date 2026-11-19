@@ -159,7 +159,7 @@ public class Dicionario {
     /**
      * Procura a resposta que mais combina com os tokens da pergunta.
      *
-     * PONTUAÇÃO (bem simples, sem estatística nenhuma):
+     * PONTUAÇÃO:
      * - cada palavra-chave da entrada que aparece na pergunta vale 1 ponto;
      * - cada par da pergunta (ex.: "artilheiro_copa") vale 2 pontos EXTRAS
      *   quando as DUAS metades do par são palavras-chave da MESMA entrada.
