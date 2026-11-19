@@ -1,68 +1,57 @@
-package futebol.texto;
+package futebol.texto; // pasta "texto": tudo que transforma a frase em tokens
 
-import java.util.Arrays;
+import java.util.ArrayList; // lista que cresce sozinha enquanto montamos as palavras
 
 /**
- * Separa uma frase em palavras individuais.
+ * SEPARADOR DE PALAVRAS — a filha que faz a separação de verdade.
  *
- * Espaços, pontuação e quaisquer outros caracteres que não sejam letras
- * sem acento ou números funcionam como divisores.
+ * O QUE FAZ:  implementa a etapa 2 do molde (ProcessadorTexto): quebra a
+ *             frase normalizada em palavras individuais, uma por token.
+ * COMO FAZ:   percorre o texto letra por letra. Letra ou número continua
+ *             montando a palavra; qualquer outra coisa (espaço, vírgula,
+ *             ponto, interrogação, underline...) é DIVISOR e fecha a palavra.
+ *             Ex.: "quem e o rei?" -> ["quem", "e", "o", "rei"] (antes do filtro).
+ * ONDE:       pacote futebol.texto. Filha de ProcessadorTexto e mãe de
+ *             SeparadorPalavrasEPares. O Dicionario também usa esta classe
+ *             para preparar as palavras-chave da base do mesmo jeito.
+ * POR QUE:    a base define O ROTEIRO, mas não sabe separar; esta classe
+ *             preenche exatamente esse único passo, do jeito mais simples
+ *             possível (sem regex, sem split — só charAt e if).
  */
 public class SeparadorPalavras extends ProcessadorTexto {
 
     /**
-     * Cria um separador que usa a lista padrão de palavras comuns.
-     */
-    public SeparadorPalavras() {
-        super();
-    }
-
-    /**
-     * Cria um separador com uma lista própria de palavras ignoradas.
-     *
-     * @param palavrasIgnoradas palavras que serão retiradas das perguntas
-     */
-    public SeparadorPalavras(String[] palavrasIgnoradas) {
-        super(palavrasIgnoradas);
-    }
-
-    /**
-     * Divide o texto quando encontra algo que não seja letra ou número.
-     *
-     * A expressão "[^a-z0-9]+" significa "um ou mais caracteres que não sejam
-     * letras de a a z ou números". Como os acentos já foram removidos antes
-     * desta chamada, as letras ficam dentro do intervalo esperado.
-     *
-     * @param textoNormalizado texto em minúsculas e sem acentos
-     * @return vetor com as palavras não vazias encontradas
+     * Etapa 2 do roteiro: quebra o texto já normalizado em palavras.
+     * Entrada: texto em minúsculas e sem acento (a etapa 1 já passou).
+     * Saída:   vetor com uma palavra por posição, na ordem em que aparecem.
      */
     @Override
-    public String[] separarPalavras(String textoNormalizado) {
-        String[] partes = textoNormalizado.split("[^a-z0-9]+");
-        // Reservamos espaço para todas as partes; algumas podem estar vazias.
-        String[] palavras = new String[partes.length];
-        int quantidade = 0;
-        int indice = 0;
+    protected String[] separarPalavras(String textoNormalizado) {
+        ArrayList<String> palavras = new ArrayList<>(); // palavras já fechadas
+        String palavraAtual = "";                       // palavra em montagem
 
-        while (indice < partes.length) {
-            // Ignoramos partes vazias que podem surgir junto à pontuação.
-            if (!partes[indice].isEmpty()) {
-                palavras[quantidade] = partes[indice];
-                quantidade++;
+        for (int i = 0; i < textoNormalizado.length(); i++) {
+            char letra = textoNormalizado.charAt(i);
+
+            if (Character.isLetterOrDigit(letra)) {
+                // letra ou número: continua montando a palavra atual
+                palavraAtual = palavraAtual + letra;
+            } else {
+                // divisor: se havia uma palavra sendo montada, fecha e guarda.
+                // (divisores seguidos, como "? ", não geram palavra vazia)
+                if (!palavraAtual.isEmpty()) {
+                    palavras.add(palavraAtual);
+                    palavraAtual = ""; // começa a montagem da próxima
+                }
             }
-            indice++;
         }
 
-        return Arrays.copyOf(palavras, quantidade);
-    }
+        // O texto pode terminar em letra (sem divisor no fim):
+        // não esquecer de guardar a última palavra montada.
+        if (!palavraAtual.isEmpty()) {
+            palavras.add(palavraAtual);
+        }
 
-    /**
-     * Devolve uma descrição deste separador para ser mostrada na demonstração.
-     *
-     * @return nome simples da estratégia de separação
-     */
-    @Override
-    public String toString() {
-        return "Separador de palavras individuais";
+        return paraVetor(palavras); // helper herdado da base: lista -> vetor
     }
 }

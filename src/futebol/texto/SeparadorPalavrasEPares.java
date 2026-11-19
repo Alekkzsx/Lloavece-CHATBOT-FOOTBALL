@@ -1,69 +1,50 @@
-package futebol.texto;
+package futebol.texto; // pasta "texto": tudo que transforma a frase em tokens
 
-import java.util.Arrays;
+import java.util.ArrayList; // lista que cresce sozinha enquanto juntamos palavras + pares
 
 /**
- * Separa palavras e também cria pares de palavras vizinhas.
+ * SEPARADOR DE PALAVRAS E PARES — o separador completo, usado pelo Chatbot.
  *
- * Primeiro usa todas as etapas de SeparadorPalavras. Depois, acrescenta pares
- * consecutivos, como "maior_artilheiro", ao final do vetor.
+ * O QUE FAZ:  tudo que a SeparadorPalavras faz E, no fim, acrescenta pares
+ *             de palavras vizinhas: "maior artilheiro" gera os tokens
+ *             "maior", "artilheiro" e também "maior_artilheiro".
+ * COMO FAZ:   herda a separação pronta da mãe e sobrescreve APENAS o gancho
+ *             da etapa 5 (acrescentarPares): copia as palavras e adiciona,
+ *             para cada vizinhança, palavra_i + "_" + palavra_i+1.
+ * ONDE:       pacote futebol.texto. Fecha a cadeia de herança de 3 níveis:
+ *             ProcessadorTexto (molde) -> SeparadorPalavras (separa)
+ *             -> SeparadorPalavrasEPares (separa + pares).
+ *             É a classe que o Chatbot escolhe para preparar as perguntas.
+ * POR QUE:    pares reconhecem EXPRESSÕES de duas palavras, que são mais
+ *             específicas que palavras soltas. "copa" e "mundo" separadas
+ *             podem falar de qualquer coisa; "copa_mundo" aponta direto
+ *             para o assunto — por isso o Dicionario dá pontos extras a eles.
  */
 public class SeparadorPalavrasEPares extends SeparadorPalavras {
 
     /**
-     * Cria um separador de palavras e pares com a lista padrão de palavras comuns.
-     */
-    public SeparadorPalavrasEPares() {
-        super();
-    }
-
-    /**
-     * Cria um separador com uma lista própria de palavras ignoradas.
-     *
-     * @param palavrasIgnoradas palavras que serão retiradas das perguntas
-     */
-    public SeparadorPalavrasEPares(String[] palavrasIgnoradas) {
-        super(palavrasIgnoradas);
-    }
-
-    /**
-     * Acrescenta um par para cada dupla de palavras vizinhas.
-     *
-     * Se houver zero ou uma palavra, não existe nenhum par. Caso contrário,
-     * o vetor final terá as palavras originais seguidas de todos os pares.
-     *
-     * @param palavras palavras já preparadas pelo processo principal
-     * @return vetor original seguido dos pares consecutivos
+     * Gancho da etapa 5: mantém as palavras originais e acrescenta os pares.
+     * Entrada: palavras já filtradas e no singular (etapas 3 e 4 passaram).
+     * Saída:   as mesmas palavras + os pares no fim do vetor.
+     * Com N palavras existem N-1 pares consecutivos (cada palavra com a
+     * vizinha da direita; a última não tem vizinha, por isso não gera par).
      */
     @Override
     protected String[] acrescentarPares(String[] palavras) {
-        // Um vetor com N palavras tem N - 1 pares consecutivos.
-        int quantidadePares = palavras.length - 1;
-        if (quantidadePares < 0) {
-            quantidadePares = 0;
+        ArrayList<String> resultado = new ArrayList<>();
+
+        // 1) copia todas as palavras originais, sem mudar nada nelas
+        for (String palavra : palavras) {
+            resultado.add(palavra);
         }
 
-        // Copia as palavras para o começo do vetor e reserva espaço para os pares.
-        String[] resultado = Arrays.copyOf(palavras, palavras.length + quantidadePares);
-        int indice = 0;
-
-        // Cada par junta a palavra atual à palavra que vem logo depois dela.
-        while (indice < quantidadePares) {
-            resultado[palavras.length + indice] =
-                    palavras[indice] + "_" + palavras[indice + 1];
-            indice++;
+        // 2) cria os pares: junta cada palavra com a vizinha da direita.
+        // A condição "i + 1 < length" garante que sempre existe uma vizinha
+        // (para quando chega na última palavra, que não tem par).
+        for (int i = 0; i + 1 < palavras.length; i++) {
+            resultado.add(palavras[i] + "_" + palavras[i + 1]);
         }
 
-        return resultado;
-    }
-
-    /**
-     * Devolve uma descrição desta estratégia para a demonstração.
-     *
-     * @return nome simples da estratégia de palavras e pares
-     */
-    @Override
-    public String toString() {
-        return "Separador de palavras individuais e pares";
+        return paraVetor(resultado); // helper herdado da base: lista -> vetor
     }
 }

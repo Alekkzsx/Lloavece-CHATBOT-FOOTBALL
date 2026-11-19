@@ -1,21 +1,45 @@
-package futebol.texto;
+package futebol.texto; // pasta "texto": tudo que transforma a frase em tokens
 
-import java.text.Normalizer;
-import java.util.Arrays;
-import java.util.Locale;
+import java.util.ArrayList; // lista que cresce sozinha (mais simples que redimensionar vetor)
 
 /**
- * Classe-base com as etapas que todos os separadores usam.
+ * PROCESSADOR DE TEXTO — a CLASSE BASE do preparo de texto (o "molde").
  *
- * A ordem do preparo é: normalizar o texto, separar as palavras, remover as
- * palavras comuns, reduzir alguns plurais e, por fim, permitir que uma
- * subclasse acrescente informações, como pares de palavras.
+ * O QUE FAZ:  transforma qualquer frase em tokens prontos para comparar com
+ *             as palavras-chave do dicionário (minúsculos, sem acento, sem
+ *             palavras comuns e com plural reduzido).
+ * COMO FAZ:   o método processar() executa um roteiro FIXO de 5 etapas:
+ *
+ *               1. normalizar  -> tudo em minúsculo e sem acento;
+ *               2. separar     -> quebrar a frase em palavras (a FILHA decide como);
+ *               3. filtrar     -> jogar fora palavras comuns ("de", "o", "qual"...);
+ *               4. reduzir     -> tirar o plural de forma simples ("copas" -> "copa");
+ *               5. acrescentar -> gancho opcional para a filha adicionar algo (pares).
+ *
+ * ONDE:       pacote futebol.texto. É a mãe de SeparadorPalavras (que é mãe
+ *             de SeparadorPalavrasEPares). Quem usa é o Chatbot e o Dicionario
+ *             (os dois preparam texto do MESMO jeito, para poder comparar).
+ * POR QUE:    padrão TEMPLATE METHOD: o roteiro fica pronto e travado aqui
+ *             (processar é "final", nenhuma filha pode mudar a ordem), e só
+ *             os passos variáveis ficam com as filhas. Assim todo separador
+ *             prepara o texto igual, mudando apenas o que precisa mudar.
+ *
+ * Por ser "abstract", esta classe NÃO pode virar objeto (new ProcessadorTexto()
+ * dá erro de compilação): ela é só o molde; quem trabalha são as filhas.
  */
 public abstract class ProcessadorTexto {
 
     /**
-     * Lista usada quando não é fornecida outra lista de palavras ignoradas.
-     * A lista fica privada para impedir que outras classes alterem seu conteúdo.
+     * Etapa 3 usa esta lista: palavras comuns (stopwords) que NÃO ajudam a
+     * descobrir o assunto da pergunta. Ex.: em "qual é o rei do futebol?"
+     * só interessam "rei" e "futebol".
+     *
+     * Já estão em minúsculo e sem acento, igual ao texto depois de normalizar
+     * (senão a comparação nunca encontraria "e" dentro de "é", por exemplo).
+     *
+     * Por que a lista está no código e não em arquivo: simplicidade — assim
+     * esta classe não precisa ler nada do disco. O arquivo base/texto/
+     * stopwords.txt existe como material para uma integração futura.
      */
     private static final String[] PALAVRAS_COMUNS = {
             "a", "o", "as", "os", "um", "uma", "uns", "umas",
@@ -33,236 +57,144 @@ public abstract class ProcessadorTexto {
             "quantas", "entao", "ne", "tudo", "coisa", "tipo"
     };
 
-    /** Palavras que serão retiradas antes da comparação do conteúdo. */
-    private String[] palavrasIgnoradas;
-
     /**
-     * Cria um processador com a lista padrão de palavras comuns.
+     * O ROTEIRO COMPLETO: prepara o texto e devolve os tokens.
+     * É o único método que quem usa a classe precisa chamar.
      *
-     * Este construtor é usado pelas classes que herdam desta classe.
-     */
-    protected ProcessadorTexto() {
-        this(null);
-    }
-
-    /**
-     * Cria um processador com uma lista própria de palavras ignoradas.
+     * "final" = nenhuma classe filha pode sobrescrever este método.
+     * A ordem das 5 etapas é uma regra da base e vale para TODAS as filhas.
      *
-     * @param palavras lista que substituirá a lista padrão; se for nula,
-     *                 será usada a lista padrão
-     */
-    protected ProcessadorTexto(String[] palavras) {
-        definirPalavrasIgnoradas(palavras);
-    }
-
-    /**
-     * Devolve uma cópia da lista atual de palavras ignoradas.
-     *
-     * A cópia evita que quem chamar este método altere a lista interna.
-     *
-     * @return vetor com as palavras ignoradas
-     */
-    public String[] obterPalavrasIgnoradas() {
-        return palavrasIgnoradas.clone();
-    }
-
-    /**
-     * Define quais palavras serão ignoradas.
-     *
-     * Cada palavra é normalizada para que, por exemplo, "VOCÊ" e "voce"
-     * sejam comparadas da mesma forma.
-     *
-     * @param palavras palavras que devem ser ignoradas; nulo seleciona a lista padrão
-     */
-    public final void definirPalavrasIgnoradas(String[] palavras) {
-        if (palavras == null) {
-            // Copiamos a lista padrão para que cada objeto tenha sua própria lista.
-            palavrasIgnoradas = PALAVRAS_COMUNS.clone();
-            return;
-        }
-
-        // Mantém a quantidade recebida e normaliza cada palavra antes de guardá-la.
-        palavrasIgnoradas = new String[palavras.length];
-        int indice = 0;
-        while (indice < palavras.length) {
-            palavrasIgnoradas[indice] = normalizar(palavras[indice]);
-            indice++;
-        }
-    }
-
-    /**
-     * Executa todas as etapas de preparo do texto, na ordem definida.
-     *
-     * Este método é final para que as classes filhas usem sempre a mesma ordem.
-     *
-     * @param texto frase original digitada pela pessoa
-     * @return palavras preparadas e, se aplicável, seus pares consecutivos
+     * @param texto a frase digitada (pode ter acento, maiúscula, pontuação...)
+     * @return vetor com as palavras úteis (e os pares, se a filha criar)
      */
     public final String[] processar(String texto) {
-        String[] palavras = separarPalavras(normalizar(texto));
-        palavras = removerPalavrasIgnoradas(palavras);
-        palavras = reduzirPlurais(palavras);
-        return acrescentarPares(palavras);
+        String normalizado = normalizar(texto);           // etapa 1: minúsculo + sem acento
+        String[] palavras = separarPalavras(normalizado); // etapa 2: a FILHA separa
+        palavras = removerPalavrasComuns(palavras);       // etapa 3: tira stopwords
+        palavras = reduzirPlurais(palavras);              // etapa 4: singular aproximado
+        return acrescentarPares(palavras);                // etapa 5: gancho da filha
     }
 
     /**
-     * Separa o texto normalizado em palavras individuais.
-     *
-     * Cada classe filha escolhe como separar o texto.
-     *
-     * @param textoNormalizado texto em minúsculas e sem acentos
-     * @return vetor com as palavras encontradas
+     * Etapa 2 — o "buraco" do molde: a base NÃO sabe separar palavras.
+     * Por ser "abstract", toda filha concreta é OBRIGADA a implementar.
+     * "protected" = só a própria classe e as filhas enxergam este método;
+     * quem usa o bot de fora só conhece o processar().
      */
-    public abstract String[] separarPalavras(String textoNormalizado);
+    protected abstract String[] separarPalavras(String textoNormalizado);
 
     /**
-     * Permite acrescentar informações depois do preparo das palavras.
-     *
-     * A implementação padrão não altera o vetor. A classe que cria pares
-     * substitui este método para acrescentar as combinações.
-     *
-     * @param palavras palavras já filtradas e reduzidas
-     * @return palavras recebidas, sem alterações
+     * Etapa 5 — GANCHO (hook): por padrão não faz nada, só devolve as palavras
+     * como chegaram. É opcional: a filha só sobrescreve se quiser acrescentar
+     * algo. A SeparadorPalavrasEPares sobrescreve para adicionar os pares;
+     * a SeparadorPalavras nem mexe aqui e fica só com as palavras.
      */
     protected String[] acrescentarPares(String[] palavras) {
         return palavras;
     }
 
     /**
-     * Coloca o texto em minúsculas e remove os sinais de acentuação.
-     *
-     * Um texto nulo é tratado como texto vazio para que as etapas seguintes
-     * possam continuar sem tentar processar uma referência inexistente.
-     *
-     * @param texto frase original
-     * @return frase em minúsculas e sem acentos, ou texto vazio se for nulo
+     * Etapa 1: deixa tudo em minúsculo e troca letras acentuadas por simples.
+     * Ex.: "Copas É CAMPEÕES" -> "copas e campeoes".
+     * Por que na mão (sem Normalizer/regex): para o código ficar o mais
+     * simples possível — só charAt, indexOf e concatenação.
      */
-    public final String normalizar(String texto) {
+    private String normalizar(String texto) {
         if (texto == null) {
-            return "";
+            return ""; // texto nulo vira texto vazio, para não dar erro adiante
         }
+        texto = texto.toLowerCase(); // primeiro, tudo em minúsculo
 
-        // A decomposição separa os acentos das letras; a expressão remove os acentos.
-        return Normalizer.normalize(texto, Normalizer.Form.NFD)
-                .replaceAll("\\p{M}", "")
-                .toLowerCase(Locale.ROOT);
-    }
+        // Duas strings "irmãs": cada letra acentuada tem a versão simples
+        // na MESMA posição da outra string (á->a, ç->c, ñ->n...).
+        String comAcento = "áàâãäéèêëíìîïóòôõöúùûüçñ";
+        String semAcento = "aaaaaeeeeiiiiooooouuuucn";
 
-    /**
-     * Retira do vetor as palavras que estão na lista de palavras ignoradas.
-     *
-     * O vetor temporário começa com o tamanho máximo possível. Ao final,
-     * Arrays.copyOf reduz o vetor ao número de palavras que foram mantidas.
-     *
-     * @param palavras palavras separadas do texto
-     * @return novo vetor sem as palavras ignoradas
-     */
-    public String[] removerPalavrasIgnoradas(String[] palavras) {
-        String[] resultado = new String[palavras.length];
-        int quantidade = 0;
-        int indice = 0;
-
-        while (indice < palavras.length) {
-            // Só guardamos a palavra quando ela não aparece na lista de exclusão.
-            if (!contem(palavrasIgnoradas, palavras[indice])) {
-                resultado[quantidade] = palavras[indice];
-                quantidade++;
+        // Percorre letra por letra montando o texto novo.
+        String resultado = "";
+        for (int i = 0; i < texto.length(); i++) {
+            char letra = texto.charAt(i);
+            int posicao = comAcento.indexOf(letra); // -1 = não é acentuada
+            if (posicao >= 0) {
+                letra = semAcento.charAt(posicao); // troca pela simples equivalente
             }
-            indice++;
-        }
-
-        return Arrays.copyOf(resultado, quantidade);
-    }
-
-    /**
-     * Aplica a redução de plural a todas as palavras do vetor.
-     *
-     * @param palavras palavras que serão analisadas
-     * @return novo vetor com as formas reduzidas
-     */
-    public String[] reduzirPlurais(String[] palavras) {
-        String[] resultado = new String[palavras.length];
-        int indice = 0;
-
-        // Cada posição de saída corresponde à mesma posição de entrada.
-        while (indice < palavras.length) {
-            resultado[indice] = reduzirPlural(palavras[indice]);
-            indice++;
+            resultado = resultado + letra; // letras comuns passam sem mudança
         }
         return resultado;
     }
 
     /**
-     * Tenta transformar uma palavra no plural em uma forma singular simples.
-     *
-     * Esta regra é apenas uma aproximação: palavras muito curtas não mudam;
-     * terminações "oes" e "aes" viram "ao"; nos demais casos, remove-se um
-     * "s" final, exceto quando a palavra termina em "ss".
-     *
-     * @param palavra palavra que será analisada
-     * @return forma reduzida ou a palavra original quando nenhuma regra se aplica
+     * Etapa 3: monta um novo vetor só com as palavras que NÃO são comuns.
+     * Usa ArrayList porque não sabemos quantas palavras vão sobrar —
+     * a lista cresce sozinha e no fim vira vetor com paraVetor().
      */
-    public String reduzirPlural(String palavra) {
-        if (palavra == null || palavra.length() < 4) {
-            return palavra;
+    private String[] removerPalavrasComuns(String[] palavras) {
+        ArrayList<String> uteis = new ArrayList<>();
+        for (String palavra : palavras) {
+            if (!contem(PALAVRAS_COMUNS, palavra)) {
+                uteis.add(palavra); // só guarda quem não está na lista de comuns
+            }
+        }
+        return paraVetor(uteis);
+    }
+
+    /** Etapa 4: aplica a redução de plural em cada palavra do vetor. */
+    private String[] reduzirPlurais(String[] palavras) {
+        String[] resultado = new String[palavras.length]; // mesmo tamanho: 1 por 1
+        for (int i = 0; i < palavras.length; i++) {
+            resultado[i] = reduzirPlural(palavras[i]);
+        }
+        return resultado;
+    }
+
+    /**
+     * Redução de plural bem simples — é um "quebra-galho", não um dicionário:
+     * - menos de 4 letras: não mexe (protege palavras como "gol", "rei", "país");
+     * - termina em "oes"/"aes": troca por "ao" (campeoes -> campeao);
+     * - termina em "s" (mas não em "ss"): tira o "s" (copas -> copa).
+     *
+     * Por que tão simples: cobre a maioria dos plurais do futebol sem
+     * complicar. Pode errar em palavra que termina em "s" sem ser plural
+     * (ex.: "luis" viraria "lui") — limitação assumida do projeto.
+     */
+    private String reduzirPlural(String palavra) {
+        if (palavra.length() < 4) {
+            return palavra; // curta demais: melhor não arriscar
         }
         if (palavra.endsWith("oes") || palavra.endsWith("aes")) {
+            // tira as 3 últimas letras ("oes"/"aes") e põe "ao" no lugar
             return palavra.substring(0, palavra.length() - 3) + "ao";
         }
         if (palavra.endsWith("s") && !palavra.endsWith("ss")) {
+            // tira só o "s" final ("ss" fica: ex. "glass" não é plural)
             return palavra.substring(0, palavra.length() - 1);
         }
-        return palavra;
+        return palavra; // não parece plural: devolve igual
     }
 
     /**
-     * Normaliza e reduz as partes de uma palavra-chave composta.
-     *
-     * O sublinhado separa as partes da expressão e é mantido na resposta.
-     * Por exemplo, "COPAS_DO_MUNDO" vira "copa_do_mundo".
-     *
-     * @param palavraChave expressão que será preparada
-     * @return expressão em minúsculas, sem acentos e com plurais reduzidos
+     * Procura uma palavra dentro de um vetor (comparação exata, com equals).
+     * Existe porque vetor puro não tem um "contains" pronto — fazemos na mão.
      */
-    public String prepararPalavraChave(String palavraChave) {
-        String[] partes = normalizar(palavraChave).split("_");
-        int indice = 0;
-
-        // Reduz cada trecho sem remover os sublinhados que formam a expressão.
-        while (indice < partes.length) {
-            partes[indice] = reduzirPlural(partes[indice]);
-            indice++;
-        }
-        return String.join("_", partes);
-    }
-
-    /**
-     * Procura uma palavra em um vetor usando comparação exata.
-     *
-     * @param lista vetor que será consultado
-     * @param palavra palavra procurada
-     * @return verdadeiro se a palavra estiver no vetor; falso caso contrário
-     */
-    private boolean contem(String[] lista, String palavra) {
-        int indice = 0;
-
-        while (indice < lista.length) {
-            if (lista[indice].equals(palavra)) {
-                return true;
+    private boolean contem(String[] vetor, String palavra) {
+        for (String item : vetor) {
+            if (item.equals(palavra)) {
+                return true; // achou: pode parar de procurar
             }
-            indice++;
         }
-        return false;
+        return false; // percorreu tudo e não achou
     }
 
     /**
-     * Cria uma descrição simples deste processador para a demonstração.
-     *
-     * @return nome da classe e quantidade de palavras ignoradas
+     * Copia uma lista para um vetor String[] (na mão, com um laço).
+     * É "protected" de propósito: as classes filhas também precisam dele
+     * para devolver seus vetores (SeparadorPalavras e SeparadorPalavrasEPares).
      */
-    @Override
-    public String toString() {
-        return getClass().getSimpleName()
-                + " (palavras ignoradas: " + palavrasIgnoradas.length + ")";
+    protected String[] paraVetor(ArrayList<String> lista) {
+        String[] vetor = new String[lista.size()];
+        for (int i = 0; i < lista.size(); i++) {
+            vetor[i] = lista.get(i);
+        }
+        return vetor;
     }
 }
